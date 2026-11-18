@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ブラウザマインクラフト風ゲーム</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/examples/js/controls/PointerLockControls.js"></script>
+</head>
+<body>
+    <canvas id="gameCanvas"></canvas>
+    
+    <!-- 操作案内 -->
+    <div id="startOverlay" class="overlay">
+        <div class="panel">
+            <h1>⛏️ ブラウザでボクセルワールド</h1>
+            <p>クリックしてプレイ開始</p>
+            <div class="controls-info">
+                <p><strong>W A S D</strong> — 移動</p>
+                <p><strong>マウス</strong> — 視点移動</p>
+                <p><strong>左クリック</strong> — ブロックを壊す</p>
+                <p><strong>右クリック</strong> — ブロックを置く</p>
+                <p><strong>スペース</strong> — ジャンプ</p>
+                <p><strong>1～4</strong> — ブロック切り替え</p>
+                <p><strong>ESC</strong> — 一時停止</p>
+            </div>
+            <button id="startBtn">ゲームスタート</button>
+        </div>
+    </div>
+
+    <!-- クロスヘア -->
+    <div id="crosshair" class="crosshair" style="display:none;">+</div>
+    
+    <!-- ブロック選択 -->
+    <div id="blockSelector" class="block-selector" style="display:none;">
+        <div class="slot selected" data-block="grass">🌿 草</div>
+        <div class="slot" data-block="dirt">🟫 土</div>
+        <div class="slot" data-block="stone">⬜ 石</div>
+        <div class="slot" data-block="wood">🟫 木</div>
+    </div>
+
+    <script src="script.js" type="module"></script>
+</body>
+</html>
